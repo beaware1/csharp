@@ -20,6 +20,7 @@ namespace MsTests.Drawing
          [Test]
         public void TestDrawStringEMF()
         {
+
             Bitmap bitmap = new Bitmap(width, height);
             Graphics bitmapGraphics = Graphics.FromImage(bitmap);
             bitmapGraphics.Clear(Color.White);
