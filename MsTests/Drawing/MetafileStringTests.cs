@@ -152,7 +152,6 @@ namespace MsTests.Drawing
             using (Metafile metafile = new Metafile(imagePath, hdc))
             {
                 Graphics g = Graphics.FromImage(metafile);
-                int penWidth = 3;
                 Matrix matrix = new Matrix();
                 matrix.RotateAt(30, new PointF(5, 5));
                 g.Transform = matrix;
@@ -177,7 +176,6 @@ namespace MsTests.Drawing
             using (Metafile metafile = new Metafile(imagePath, hdc))
             {
                 Graphics g = Graphics.FromImage(metafile);
-                int penWidth = 3;
                 Matrix matrix = new Matrix();
                 matrix.RotateAt(30, new PointF(5, 5));
                 g.Transform = matrix;
@@ -188,6 +186,64 @@ namespace MsTests.Drawing
             }
             Image image = new Metafile(imagePath);
             image.Save(Path.Combine(pathPng, pngName), ImageFormat.Png);
+        }
+
+        [Test]
+        public void TestDrawStringWrappedText()
+        {
+            String imageName = "StringWrappedText";
+            String metafileName = imageName + Utils.CS_EMF_EXT;
+            String pngName = imageName + Utils.CS_EMF_PNG_EXT;
+            String imagePath = Path.Combine(pathMetafiles, metafileName);
+            Graphics gr = Graphics.FromHwnd(IntPtr.Zero);
+            IntPtr hdc = gr.GetHdc();
+            using (Metafile metafile = new Metafile(imagePath, hdc))
+            {
+                Graphics g = Graphics.FromImage(metafile); 
+                string text1 = "Draw text in a rectangle by passing a RectF to the DrawString method.";
+                using (Font font1 = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Point))
+                {
+                    RectangleF rectF1 = new RectangleF(30, 10, 100, 122);
+                    g.DrawString(text1, font1, Brushes.Blue, rectF1);
+                    g.DrawRectangle(Pens.Black, Rectangle.Round(rectF1));
+                }
+                gr.ReleaseHdc(hdc);
+            }
+            Image image = new Metafile(imagePath);
+            image.Save(Path.Combine(pathPng, pngName), ImageFormat.Png);
+        }
+
+        [Test]
+        public void TestDrawStringFontStyles()
+        {
+            FontStyle[] fontStyles = (FontStyle[]) Enum.GetValues(typeof (FontStyle));
+            GraphicsUnit[] graphicsUnits = new GraphicsUnit[] { GraphicsUnit.Document,  GraphicsUnit.Millimeter, GraphicsUnit.Pixel, GraphicsUnit.Point};
+            foreach (FontStyle fontStyle in fontStyles)
+            {
+                foreach (GraphicsUnit graphicsUnit in graphicsUnits)
+                {
+                    String imageName = "StringFontStyle" + fontStyle + "GraphicsUnit" + graphicsUnit;
+                    String metafileName = imageName + Utils.CS_EMF_EXT;
+                    String pngName = imageName + Utils.CS_EMF_PNG_EXT;
+                    String imagePath = Path.Combine(pathMetafiles, metafileName);
+                    Graphics gr = Graphics.FromHwnd(IntPtr.Zero);
+                    IntPtr hdc = gr.GetHdc();
+                    using (Metafile metafile = new Metafile(imagePath, hdc))
+                    {
+                        Graphics g = Graphics.FromImage(metafile);
+                        string text1 = "Draw text in a rectangle by passing a RectF to the DrawString method.";
+                        using (Font font1 = new Font("Arial", 12, fontStyle, graphicsUnit))
+                        {
+                            RectangleF rectF1 = new RectangleF(30, 10, 100, 122);
+                            g.DrawString(text1, font1, Brushes.Blue, rectF1);
+                            g.DrawRectangle(Pens.Black, Rectangle.Round(rectF1));
+                        }
+                        gr.ReleaseHdc(hdc);
+                    }
+                    Image image = new Metafile(imagePath);
+                    image.Save(Path.Combine(pathPng, pngName), ImageFormat.Png);
+                }
+            }
         }
     }
 }

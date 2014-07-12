@@ -25,6 +25,6 @@ namespace MsTests.Drawing
            public static String CS_MF_SPATH = "cs/mf/";
            public static String CS_PNG_SPATH = "cs/png/";
        
-        public static String METAFILES_PATH = "C:/Projects/Java.SE/modules/Net.Framework/System.Drawing/lib/src/test/resources/com/aspose/ms/System/Drawing/Metafiles/";
+        public static String METAFILES_PATH = "E:/aspose/ms/Java.SE/modules/Net.Framework/System.Drawing/lib/src/test/resources/com/aspose/ms/System/Drawing/Metafiles/";
     }
 }

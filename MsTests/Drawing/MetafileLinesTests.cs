@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
@@ -132,6 +133,29 @@ namespace MsTests.Drawing
                 gr.ReleaseHdc(hdc);
             }
             save();
+        }
+
+        [Test]
+        public void BaseLineEmfTest()
+        {
+            for (int i = 0; i < 360; i += 30)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    prepareEmf("MetafileLineAngle" + i + "LineWidth" + j);
+                    using (Metafile metafile = new Metafile(pathMetafiles, hdc))
+                    {
+                        Graphics g = Graphics.FromImage(metafile);
+                        Pen pen = new Pen(color, j);
+                        Matrix matrix = new Matrix();
+                        matrix.RotateAt(i, new PointF(f1, f2));
+                        pen.Transform = matrix;
+                        g.DrawLine(pen, f1, f2, f3, f4);
+                        gr.ReleaseHdc(hdc);
+                    }
+                    save();
+                }
+            }
         }
 
     
