@@ -13,3 +13,11 @@ C:\Projects\csharp\trunk\MsTests\bin\Debug\MsTests.exe
 C:\Projects\csharp\trunk\MsTests\bin\Debug\MsTests.pdb
 C:\Projects\csharp\trunk\MsTests\bin\Debug\nunit.framework.dll
 C:\Projects\csharp\trunk\MsTests\bin\Debug\nunit.framework.xml
+C:\Projects\csharp\MsTests\bin\Debug\MsTests.exe.config
+C:\Projects\csharp\MsTests\obj\Debug\MsTests.exe
+C:\Projects\csharp\MsTests\obj\Debug\MsTests.pdb
+C:\Projects\csharp\MsTests\bin\Debug\MsTests.exe
+C:\Projects\csharp\MsTests\bin\Debug\MsTests.pdb
+C:\Projects\csharp\MsTests\bin\Debug\nunit.framework.dll
+C:\Projects\csharp\MsTests\bin\Debug\nunit.framework.xml
+C:\Projects\csharp\MsTests\obj\Debug\MsTests.csprojResolveAssemblyReference.cache

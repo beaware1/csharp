@@ -40,7 +40,7 @@ namespace MsTests.Drawing
         public void TestDrawStringWMF() //TODO полоски  
         {
             String imageName = "String";
-            String metafileName = imageName + "_c.wmf";
+            String metafileName = imageName + Utils.CS_WMF_EXT;
             String pngName = imageName + Utils.CS_WMF_PNG_EXT;
             String imagePath = Path.Combine(pathMetafiles, metafileName);
             Graphics gr = Graphics.FromHwnd(IntPtr.Zero);
@@ -81,7 +81,7 @@ namespace MsTests.Drawing
         public void TestDrawStringWMFClearMode() //TODO clear -  CSPORT-ODS-34674 
         {
             String imageName = "StringClearMode";
-            String metafileName = imageName + "_c.wmf";
+            String metafileName = imageName + Utils.CS_WMF_EXT;
             String pngName = imageName + Utils.CS_WMF_PNG_EXT;
             String imagePath = Path.Combine(pathMetafiles, metafileName);
             Graphics gr = Graphics.FromHwnd(IntPtr.Zero);
@@ -123,7 +123,7 @@ namespace MsTests.Drawing
         public void TestDrawStringWMFWidthPenMode() //TODO сложная кисть
         {
             String imageName = "StringWidthPenMode";
-            String metafileName = imageName + "_c.wmf";
+            String metafileName = imageName + Utils.CS_WMF_EXT;
             String pngName = imageName + Utils.CS_WMF_PNG_EXT;
             String imagePath = Path.Combine(pathMetafiles, metafileName);
             Graphics gr = Graphics.FromHwnd(IntPtr.Zero);
@@ -168,7 +168,7 @@ namespace MsTests.Drawing
         public void TestDrawStringWMFWidthPenRotateMode() //TODO сложная кисть
         {
             String imageName = "StringWidthPenRotateMode";
-            String metafileName = imageName + "_c.wmf";
+            String metafileName = imageName + Utils.CS_WMF_EXT;
             String pngName = imageName + Utils.CS_WMF_PNG_EXT;
             String imagePath = Path.Combine(pathMetafiles, metafileName);
             Graphics gr = Graphics.FromHwnd(IntPtr.Zero);

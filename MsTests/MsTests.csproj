@@ -71,7 +71,7 @@
     <Compile Include="Drawing\MetafileGraphicsPathTests.cs" />
     <Compile Include="Drawing\MetafileImageTests.cs" />
     <Compile Include="Drawing\MetafileRectangleTests.cs" />
-    <Compile Include="Drawing\MetafileLinesTests.cs" />
+    <Compile Include="Drawing\MetafileStrings2Tests.cs" />
     <Compile Include="Drawing\MetafileStringTests.cs" />
     <Compile Include="Drawing\PageScaleStringTests.cs" />
     <Compile Include="Drawing\PageScaleTests.cs" />
