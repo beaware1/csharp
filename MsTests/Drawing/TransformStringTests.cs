@@ -7,7 +7,7 @@ namespace MsTests.Drawing
 {
     class TransformStringTests
     {
-        private static String FOLDER_IMAGES = "C:/Projects/Java.SE/modules/Net.Framework/System.Drawing/lib/src/test/resources/com/aspose/ms/System/Drawing/bitmaps/";
+        
       
 
         float scaleX1 = 0.1f;
@@ -486,7 +486,7 @@ namespace MsTests.Drawing
             rotateTransform(subGraphics, angle2);
             subGraphics.DrawPolygon(new Pen(Color.Blue), points);
             graphics.DrawImage(subBitmap, 400, 400);
-            sourceBitmap.Save(FOLDER_IMAGES + "RotatePolygon.bmp"); 
+            sourceBitmap.Save(LocalSettings.FOLDER_IMAGES + "RotatePolygon123.bmp"); 
         }
 
         [Test]
