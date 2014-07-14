@@ -13,8 +13,8 @@ namespace MsTests.Drawing
     internal class MetafileStrings2Tests
     {
 
-        private String pathMetafiles = Utils.METAFILES_PATH + Utils.STRINGS_SPATH + Utils.CS_MF_SPATH;
-        private String pathPng = Utils.METAFILES_PATH + Utils.STRINGS_SPATH + Utils.CS_PNG_SPATH;
+        private String pathMetafiles = LocalSettings.METAFILES_PATH + Utils.STRINGS_SPATH + Utils.CS_MF_SPATH;
+        private String pathPng = LocalSettings.METAFILES_PATH + Utils.STRINGS_SPATH + Utils.CS_PNG_SPATH;
 
         private Color color = Color.Blue;
         private float f1 = 10f;

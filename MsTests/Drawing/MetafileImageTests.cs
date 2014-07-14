@@ -10,8 +10,8 @@ namespace MsTests.Drawing
     class MetafileImageTests
     {
 
-        private String pathMetafiles = Utils.METAFILES_PATH + Utils.IMAGES_SPATH + Utils.CS_MF_SPATH;
-        private String pathPng = Utils.METAFILES_PATH + Utils.IMAGES_SPATH + Utils.CS_PNG_SPATH;
+        private String pathMetafiles = LocalSettings.METAFILES_PATH + Utils.IMAGES_SPATH + Utils.CS_MF_SPATH;
+        private String pathPng = LocalSettings.METAFILES_PATH + Utils.IMAGES_SPATH + Utils.CS_PNG_SPATH;
 
         [Test]
         public void TestDrawImageEMF()

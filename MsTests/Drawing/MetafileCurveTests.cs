@@ -13,8 +13,8 @@ namespace MsTests.Drawing
 {
     class MetafileCurveTests
     {
-        private String pathMetafiles = Utils.METAFILES_PATH + Utils.LINES_SPATH + Utils.CS_MF_SPATH;
-        private String pathPng = Utils.METAFILES_PATH + Utils.LINES_SPATH + Utils.CS_PNG_SPATH;
+        private String pathMetafiles = LocalSettings.METAFILES_PATH + Utils.LINES_SPATH + Utils.CS_MF_SPATH;
+        private String pathPng = LocalSettings.METAFILES_PATH + Utils.LINES_SPATH + Utils.CS_PNG_SPATH;
 
 
         [Test]

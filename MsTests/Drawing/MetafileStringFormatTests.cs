@@ -11,8 +11,8 @@ namespace MsTests.Drawing
 {
     class MetafileStringFormatTests
     {
-        private String pathMetafiles = Utils.METAFILES_PATH + Utils.STRINGS_SPATH + Utils.CS_MF_SPATH;
-        private String pathPng = Utils.METAFILES_PATH + Utils.STRINGS_SPATH + Utils.CS_PNG_SPATH;
+        private String pathMetafiles = LocalSettings.METAFILES_PATH + Utils.STRINGS_SPATH + Utils.CS_MF_SPATH;
+        private String pathPng = LocalSettings.METAFILES_PATH + Utils.STRINGS_SPATH + Utils.CS_PNG_SPATH;
 
 
         [Test]
@@ -292,7 +292,7 @@ namespace MsTests.Drawing
             image.Save(Path.Combine(pathPng, pngName), ImageFormat.Png);
         }
 
- [Test]
+        [Test]
         public void TestTextInSpecificPositionWmf()
         {
             String imageName = "TextInSpecificPosition";
@@ -323,6 +323,56 @@ namespace MsTests.Drawing
             Image image = new Metafile(imagePath);
             image.Save(Path.Combine(pathPng, pngName), ImageFormat.Png);
         }
+
+        [Test]
+        public void TestTextTransformEmf()
+        {
+            String imageName = "TextTransform";
+            String metafileName = imageName + Utils.CS_EMF_EXT;
+            String pngName = imageName + Utils.CS_EMF_PNG_EXT;
+            String imagePath = Path.Combine(pathMetafiles, metafileName);
+            Graphics gr = Graphics.FromHwnd(IntPtr.Zero);
+            IntPtr hdc = gr.GetHdc();
+            using (Metafile metafile = new Metafile(imagePath, hdc))
+            {
+                Graphics g = Graphics.FromImage(metafile);
+                string text = "Transform text";
+                Font font = new Font("Times New Roman", 30, FontStyle.Bold, GraphicsUnit.Pixel);
+                g.TranslateTransform(200, 200);
+                g.RotateTransform(30);
+                SizeF textSize = g.MeasureString(text, font);
+                g.DrawString(text, font, Brushes.Red, -(textSize.Width / 2), -(textSize.Height / 2));
+                gr.ReleaseHdc(hdc);
+            }
+            Image image = new Metafile(imagePath);
+            image.Save(Path.Combine(pathPng, pngName), ImageFormat.Png);
+        }
+
+
+        [Test]
+        public void TestTextTransformWmf()
+        {
+            String imageName = "TextTransform";
+            String metafileName = imageName + Utils.CS_WMF_EXT;
+            String pngName = imageName + Utils.CS_WMF_PNG_EXT;
+            String imagePath = Path.Combine(pathMetafiles, metafileName);
+            Graphics gr = Graphics.FromHwnd(IntPtr.Zero);
+            IntPtr hdc = gr.GetHdc();
+            using (Metafile metafile = new Metafile(imagePath, hdc))
+            {
+                Graphics g = Graphics.FromImage(metafile);
+                string text = "Transform text";
+                Font font = new Font("Times New Roman", 30, FontStyle.Bold, GraphicsUnit.Pixel);
+                g.TranslateTransform(200, 200);
+                g.RotateTransform(30);
+                SizeF textSize = g.MeasureString(text, font);
+                g.DrawString(text, font, Brushes.Red, -(textSize.Width / 2), -(textSize.Height / 2));
+                gr.ReleaseHdc(hdc);
+            }
+            Image image = new Metafile(imagePath);
+            image.Save(Path.Combine(pathPng, pngName), ImageFormat.Png);
+        }
+
 
     }
 }

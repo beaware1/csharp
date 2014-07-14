@@ -12,8 +12,8 @@ namespace MsTests.Drawing
 {
     class MetafileDrawImageTests
     {
-        private String pathMetafiles = Utils.METAFILES_PATH + Utils.IMAGES_SPATH + Utils.CS_MF_SPATH;
-        private String pathPng = Utils.METAFILES_PATH + Utils.IMAGES_SPATH + Utils.CS_PNG_SPATH;
+        private String pathMetafiles = LocalSettings.METAFILES_PATH + Utils.IMAGES_SPATH + Utils.CS_MF_SPATH;
+        private String pathPng = LocalSettings.METAFILES_PATH + Utils.IMAGES_SPATH + Utils.CS_PNG_SPATH;
         private int width = 1600;
         private int height = 1600;
 
